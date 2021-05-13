@@ -1,0 +1,18 @@
+create table login(username varchar(40), password varchar(40));
+
+
+insert into login values('admin','12345');
+
+create table room(room_number varchar(20) NOT NULL, availability varchar(20) NOT NULL, clean_status varchar(20) NOT NULL, price varchar(20) NOT NULL, bed_type varchar(30) NOT NULL, primary KEY (`room_number`));
+
+
+create table customer(id varchar(30) NOT NULL, number varchar(30) NOT NULL, name varchar(30) NOT NULL, gender varchar(30) NOT NULL, country varchar(30) NOT NULL, room_number varchar(30) NOT NULL, status varchar(30) NOT NULL, deposit varchar(30) NOT NULL, PRIMARY KEY (`id`),  FOREIGN KEY(`room_number`) REFERENCES room(`room_number`));
+
+
+create table employee(name varchar(30) NOT NULL, age varchar(10) NOT NULL, gender varchar(30) NOT NULL, job varchar(30) NOT NULL, salary varchar(30) NOT NULL, phone varchar(30) NOT NULL, aadhar varchar(30) NOT NULL, email varchar(40) NOT NULL);
+
+
+create table driver(name varchar(30) NOT NULL, age varchar(10) NOT NULL, gender varchar(20) NOT NULL, company varchar(30) NOT NULL, brand varchar(30) NOT NULL, available varchar(10) NOT NULL, location varchar(50) NOT NULL);
+
+
+create table department(department varchar(30) NOT NULL, budget varchar(30) NOT NULL);
